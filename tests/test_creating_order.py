@@ -9,8 +9,8 @@ class TestCreatingOrder:
 
     @allure.title('Создание заказа')
     @allure.description("Создание заказа с авторизацией, проверка кода и текста ответа")
-    def test_create_order_with_authorization(self, user_token):
-        token = user_token
+    def test_create_order_with_authorization(self, user_data):
+        token = user_data
         ingredients = {
             "ingredients": [Ingredients.BUN_R2_D3, Ingredients.MAIN_PROTOSTOMIA, Ingredients.SAUSE_SPICY_X]
         }

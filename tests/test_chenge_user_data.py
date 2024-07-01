@@ -7,8 +7,8 @@ from helpers import get_sign_up_date
 class TestChengeUserData:
     @allure.title('Изменение данных пользователя')
     @allure.description("Изменение с авторизацией, проверка кода и текста ответа")
-    def test_chenge_user_data_with_authorization(self, user_token):
-        token = user_token
+    def test_chenge_user_data_with_authorization(self, user_data):
+        token = user_data
         payload = get_sign_up_date()
         headers = {'Authorization': token}
         response = requests.patch(Urls.CHANGING_USER_DATA, headers=headers, data=payload)

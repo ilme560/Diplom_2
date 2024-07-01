@@ -9,8 +9,8 @@ from data import ApiAnswer
 class TestCreateUser:
     @allure.title('Создание пользователя')
     @allure.description("Проверка создать уникального пользователя, проверка кода и текста ответа")
-    def test_create_user(self, user_registration):
-        response = user_registration
+    def test_create_user(self, user_data):
+        response = user_data
         assert response.status_code == 200
         assert ApiAnswer.RESPONSE_SUCCESS in response.text
 

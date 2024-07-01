@@ -7,8 +7,8 @@ from data import ApiAnswer
 class TestGetUserOrders:
     @allure.title('Получение заказов конкретного пользователя')
     @allure.description("Авторизованный пользователь, проверка кода и текста ответа")
-    def test_get_orders_with_authorization(self, user_token):
-        token = user_token
+    def test_get_orders_with_authorization(self, user_data):
+        token = user_data
         headers = {'Authorization': token}
         response = requests.get(Urls.CREATING_AN_ORDER, headers=headers)
         assert response.status_code == 200
